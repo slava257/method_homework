@@ -79,24 +79,22 @@ public class Main {
     // клиента.
     //Наша задача — доработать код, а именно написать метод, который на вход принимает
     // дистанцию и возвращает итоговое количество дней доставки.
-    public static void delivery(int deliveryDays) {
+    public static void delivery (int deliveryDays) {
         System.out.println(deliveryDays);
     }
     public static int deliveryDays(int deliveryDistance) {
         int deliveryDays = 1;
-        if (deliveryDistance > 20) {
-            deliveryDays++;
-        }
-        if (deliveryDistance > 60) {
-            deliveryDays++;
-        }
+       while( deliveryDays<=deliveryDistance/40) {
+           deliveryDays++;
+       }
         return deliveryDays;
-    }
+        }
+
     public static void main(String[] args) {
         System.out.println("Task 1");
         for (int years = 0; years <= 3000; years++) {
             IsOrIsNotALeapYears(years);
-            }
+        }
         int year = 2022;
         IsOrIsNotALeapYears(year);
 
@@ -106,9 +104,10 @@ public class Main {
         InstallApplicationsFor(clientOperatingSystem, clientDeviceYear);
 
         System.out.println("Task 3");
-        int deliveryDistance = 27;
+        int deliveryDistance = 350;
         int days = deliveryDays(deliveryDistance);
         delivery(days);
-        }
+    }
 
-        }
+}
+
