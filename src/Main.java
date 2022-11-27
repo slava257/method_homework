@@ -11,12 +11,13 @@ public class Main {
     // “*номер года —* не високосный год”.
     public static void IsOrIsNotALeapYears(int years) {
         if (years % 4 == 0 && years % 100 != 0 || years % 400 == 0) {
-            System.out.println(years+" високосный год");
+            System.out.println(years + " високосный год");
         } else {
-            System.out.println(years+" не високосный год");
+            System.out.println(years + " не високосный год");
         }
     }
-// Задание 2
+
+    // Задание 2
 //Вспомним задание 2 по условным операторам, где нам необходимо было предложить
 // пользователю облегченную версию приложения.
 //Текст прошлого задания
@@ -46,7 +47,7 @@ public class Main {
 //В результате программа должна выводить в консоль в зависимости от исходных данных,
 // какую версию приложения (обычную или lite) и для какой ОС (Android или iOS) нужно
 // установить пользователю.
-    public static void InstallApplicationsFor(int OperatingSystem, int yearOfRelease ) {
+    public static void InstallApplicationsFor(int OperatingSystem, int yearOfRelease) {
         int currentYear = LocalDate.now().getYear();
         if (OperatingSystem == 1) {
             if (yearOfRelease < currentYear) {
@@ -62,6 +63,7 @@ public class Main {
             }
         }
     }
+
     //Возвращаемся к любимой многими задаче на расчет дней доставки банковской карты от банка.
     //Текст прошлого задания
     //Вернемся к делам банковским. У нас хороший банк, поэтому для наших клиентов мы организуем
@@ -79,17 +81,27 @@ public class Main {
     // клиента.
     //Наша задача — доработать код, а именно написать метод, который на вход принимает
     // дистанцию и возвращает итоговое количество дней доставки.
-    public static void delivery (int deliveryDays) {
+    public static void delivery(int deliveryDays) {
         System.out.println(deliveryDays);
     }
-    public static int deliveryDays(int deliveryDistance) {
-        int deliveryDays = 1;
-       while( deliveryDays<=deliveryDistance/40) {
-           deliveryDays++;
-       }
-        return deliveryDays;
-        }
 
+    public static int deliveryDays(int deliveryDistance) {
+        int deliveryDays ;
+        if (deliveryDistance <= 20) {
+            deliveryDays = 1;
+        } else {
+            deliveryDays=1;
+            deliveryDistance=deliveryDistance-20;
+            int Distance  =deliveryDistance/40;
+            int Distance1 = deliveryDistance%40;
+            deliveryDays+=Distance;
+
+            if (Distance1 != 0) {
+                deliveryDays++;
+            }
+        }
+        return deliveryDays;
+    }
     public static void main(String[] args) {
         System.out.println("Task 1");
         for (int years = 0; years <= 3000; years++) {
@@ -104,10 +116,8 @@ public class Main {
         InstallApplicationsFor(clientOperatingSystem, clientDeviceYear);
 
         System.out.println("Task 3");
-        int deliveryDistance = 350;
+        int deliveryDistance = 30;
         int days = deliveryDays(deliveryDistance);
         delivery(days);
     }
-
-}
-
+    }
