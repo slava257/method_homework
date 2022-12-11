@@ -103,7 +103,7 @@ public class Main {
         return deliveryDays;
     }
     public static void main(String[] args) {
-        System.out.println("Task 1");
+        System.out.println(" Task 1 ");
         int year = 2022;
         IsOrIsNotALeapYears(year);
 
