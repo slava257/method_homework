@@ -104,9 +104,6 @@ public class Main {
     }
     public static void main(String[] args) {
         System.out.println("Task 1");
-        for (int years = 0; years <= 3000; years++) {
-            IsOrIsNotALeapYears(years);
-        }
         int year = 2022;
         IsOrIsNotALeapYears(year);
 
